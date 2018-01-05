@@ -1,15 +1,13 @@
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
+
 mat-toolbar{
   background-color: #aa8839;
   color: white;
-  /*display: inline-block;*/
+  display: block;
+
   font-size: 16px;
   padding: 10px 10px;
 }
-/*mat-toolbar div{*/
-  /*margin-right:8px;*/
-/*}*/
-mat-toolbar mat-icon{
-  margin-left: 10px;
-  margin-right: 10px;
-  padding-top: 0;
+mat-toolbar span{
+  margin-left: 8px;
 }
