@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { TopMenuComponent } from './top-menu/top-menu.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MyMenuComponent } from './my-menu/my-menu.component';
+import { BannerComponent } from './banner/banner.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     TopMenuComponent,
-    MyMenuComponent
+    MyMenuComponent,
+    BannerComponent
   ],
   imports: [
     BrowserModule,
