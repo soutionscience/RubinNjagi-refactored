@@ -1,0 +1,6 @@
+.mymenu{
+    float: right;
+}
+.mymenu a{
+    margin: 4px;
+}

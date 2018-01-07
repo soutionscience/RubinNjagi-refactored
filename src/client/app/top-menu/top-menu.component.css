@@ -1,7 +1,7 @@
-@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
+/* @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"); */
 
 mat-toolbar{
-  background-color: #aa8839;
+  background-color:  #ffd556;
   color: white;
   display: block;
 
@@ -10,4 +10,15 @@ mat-toolbar{
 }
 mat-toolbar span{
   margin-left: 8px;
+}
+.btn-light{
+  background-color: transparent;
+  font-size: 1pc;
+  color: white;
+}
+.contacts span{
+  font-size: 15px;
+}
+.social a{
+  margin: 4px;
 }
