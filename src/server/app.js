@@ -8,10 +8,8 @@ var mongoose= require('mongoose')
 var cors = require('cors')
 var config= require('./config')
 
-// var index = require('./routes/index');
-// var users = require('./routes/users');
-// var main = require('./routes/main');
-// var category = require('./routes/category');
+ var about  = require('./routes/about.route');
+
 
 var app = express();
 app.use(cors());
@@ -20,7 +18,7 @@ app.use(cors());
 
 mongoose.connect(process.env.MONGOLAB_URI || config.mongoDbUrl, function(err, db){
 	if(!err){
-		console.log('connected to mongo')
+		console.log('connected to online mongo')
 		database= db;
 	}
 	else{
@@ -40,10 +38,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.use('/', index);
-// app.use('/users', users);
-// app.use('/main', main)
-// app.use('/categories', category)
+ app.use('/api/', about);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
