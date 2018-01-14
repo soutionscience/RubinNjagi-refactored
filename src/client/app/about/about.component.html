@@ -1,13 +1,24 @@
 <section class="about container">
   <h1>About me</h1>
+  <div *ngFor ="let about of abouts">
   <div class="row">
     <div class="col-md-6">
-      <div *ngFor ="let about of abouts">
-       <h2>{{about.title}}</h2>
-       <h3>{{about.subtitle}}</h3>
-      </div>
+      <h2>{{about.title}}</h2>
+      <h3>{{about.subtitle}}</h3>
+      <p>{{about.description}}</p>
+    </div>
+  
+    
+  
+    <div class="col-md-6">
+      <h2>{{about.secondTitle}}</h2>
+      <h3>{{about.secondSubTitle}}</h3>
+      <p>{{about.secondDesc}}</p>
+      
     </div>
   </div>
+  </div>
+
 
   <app-add-image></app-add-image>
 
