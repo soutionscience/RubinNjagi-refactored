@@ -1,6 +1,6 @@
 <div class="container about">
   <div class="panel panel-default">
-<form class="test" [formGroup]="aboutForm" (submit) = "onSubmit()">
+<form class="test" [formGroup]="aboutForm" (submit) = "onSubmit()" enctype="multipart/form-data">
     <div class="form-group">
       {{aboutForm.value | json}}
       <label>title</label>
@@ -29,7 +29,7 @@
 
               <div class="form-group">
                   <label for="exampleFormControlFile1">Image File upload</label>
-                  <input type="file" class="form-control-file">
+                  <input formControlName = "image" type="file" class="form-control-file">
                 </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
