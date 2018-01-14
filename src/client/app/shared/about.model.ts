@@ -1,4 +1,5 @@
 export interface About {
+    image: string;
     title: string;
     subtitle: string;
     description: string;

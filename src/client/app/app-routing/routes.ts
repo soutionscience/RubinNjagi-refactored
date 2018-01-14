@@ -1,5 +1,6 @@
 import {Routes ,RouterModule} from '@angular/router';
 import {AboutComponent} from '../about/about.component'
+import { AdminComponent } from '../admin/admin.component';
 
 export const routes :Routes = [{
     path:'',
@@ -10,4 +11,9 @@ export const routes :Routes = [{
 {
     path:'home',
     component: AboutComponent
-}]
+},
+{
+    path:'admin',
+    component: AdminComponent
+}
+]
