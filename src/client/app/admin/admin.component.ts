@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup , FormBuilder} from '@angular/forms';
+import { AboutService } from '../services/about.service';
 
 @Component({
   selector: 'app-admin',
@@ -8,7 +9,7 @@ import { FormGroup , FormBuilder} from '@angular/forms';
 })
 export class AdminComponent implements OnInit {
     aboutForm: FormGroup;
-  constructor(private fb: FormBuilder) { this.createForm()}
+  constructor(private fb: FormBuilder, private aboutService: AboutService) { this.createForm()}
 
   createForm(){
 
@@ -17,14 +18,21 @@ export class AdminComponent implements OnInit {
       title: '',
       subtitle:'',
       description: '',
-      secondtitle: '',
-      secondsubtitle: '',
-      seconddescription: ''
+      secondTitle: '',
+      secondSubTitle: '',
+      secondDesc: ''
 
     })
   }
 
   ngOnInit() {
+  }
+
+  onSubmit(){
+
+    this.aboutService.postAbout(this.aboutForm.value)
+    console.log("submiting form")
+    
   }
 
 }

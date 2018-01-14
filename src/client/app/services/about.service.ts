@@ -14,7 +14,7 @@ export class AboutService {
   }
 
   postAbout(newPost){
-    this.restangular.post(newPost)
+    this.restangular.all('about').post(newPost)
   }
 
 }

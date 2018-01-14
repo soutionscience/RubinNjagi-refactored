@@ -7,9 +7,9 @@ var about = new Schema({
     title: String,
     subtitle: String,
     description: String,
-    secondtitle: String,
-    secondsubtitle: String,
-    seconddescription: String
+    secondTitle: String,
+    secondSubTitle: String,
+    secondDesc: String
 
 
 })
