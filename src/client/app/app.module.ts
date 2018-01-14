@@ -18,7 +18,10 @@ import { AdminComponent } from './admin/admin.component';
 import {RestangularModule, Restangular} from 'ngx-restangular';
 import {RestangularConfigFactory} from './shared/rest-config';
 import { AboutService } from './services/about.service';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AddImageComponent } from './add-image/add-image.component';
+import { UploadService } from './services/upload.service';
 
 
 
@@ -30,7 +33,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MyMenuComponent,
     BannerComponent,
     AboutComponent,
-    AdminComponent
+    AdminComponent,
+    AddImageComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +49,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [AboutService],
+  providers: [AboutService, UploadService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

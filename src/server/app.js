@@ -9,6 +9,7 @@ var cors = require('cors')
 var config= require('./config')
 
  var about  = require('./routes/about.route');
+ var upload = require('./routes/uploads.route')
 
 
 var app = express();
@@ -39,6 +40,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
  app.use('/api/about', about);
+ app.use('/api/uploads', upload)
 
 
 // catch 404 and forward to error handler
