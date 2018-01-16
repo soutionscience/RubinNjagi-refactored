@@ -10,7 +10,7 @@ export const routes :Routes = [{
 },
 {
     path:'home',
-    component: AboutComponent
+    loadChildren: './website.module#WebsiteModule'
 },
 {
     path:'admin',
