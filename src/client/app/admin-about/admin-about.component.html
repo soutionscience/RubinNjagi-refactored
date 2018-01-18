@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="item-display">
+    <h3>All Abouts</h3>
+    
+    <div>
+      <section *ngFor= "let about of abouts">
+      <button (click) = "onSelect(about)" class="btn btn-primary">{{about.title}}</button>
+    </section>
+    </div>
+  <!-- <div><h1>Tester</h1></div> -->
+    <div class="details">
+    <app-admin-about-detail [selected] ="selectedOne"></app-admin-about-detail>
+  </div>
+
+  </div>
+
+  <div class="add">
+    <button (click)="addAbout()" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Add</button>
+  </div>
+  </div>
+

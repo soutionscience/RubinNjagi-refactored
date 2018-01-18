@@ -9,19 +9,12 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import {RestangularModule, Restangular} from 'ngx-restangular';
 import {RestangularConfigFactory} from './shared/rest-config';
 import { AboutService } from './services/about.service';
-
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AddImageComponent } from './add-image/add-image.component';
 import { UploadService } from './services/upload.service';
-import { AdminComponent } from './admin/admin.component';
-
-
-
+import { RouterModule } from '@angular/router/src/router_module';
 
 @NgModule({
   declarations: [
-    AddImageComponent,
-    AdminComponent
+  
   ],
   imports: [
     BrowserModule,
@@ -32,9 +25,7 @@ import { AdminComponent } from './admin/admin.component';
     AppRoutingModule,
     AngularFontAwesomeModule,
     HttpModule,
-    RestangularModule.forRoot(RestangularConfigFactory),
-    FormsModule,
-    ReactiveFormsModule
+    RestangularModule.forRoot(RestangularConfigFactory)
   ],
   providers: [AboutService, UploadService],
   bootstrap: [AppComponent]

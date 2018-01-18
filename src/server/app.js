@@ -10,6 +10,8 @@ var config= require('./config')
 
  var about  = require('./routes/about.route');
  var upload = require('./routes/uploads.route')
+ var work = require('./routes/work.route');
+var education = require('./routes/education.routes')
 
 
 var app = express();
@@ -17,9 +19,9 @@ app.use(cors());
 
 
 
-mongoose.connect(process.env.MONGOLAB_URI || config.mongoDbUrl, function(err, db){
+mongoose.connect(process.env.MONGOLAB_URI || config.localDb, function(err, db){
 	if(!err){
-		console.log('connected to online mongo')
+		console.log('connected to local mongo')
 		database= db;
 	}
 	else{
@@ -45,7 +47,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
  app.use('/api/about', about);
- app.use('/api/uploads', upload)
+ app.use('/api/uploads', upload);
+ app.use('/api/work', work);
+ app.use('/api/education', education)
 
 
 // catch 404 and forward to error handler

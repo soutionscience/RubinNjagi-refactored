@@ -1,0 +1,13 @@
+
+<div *ngIf="selected">
+    <div class="card" style="width: 36rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{selected.title}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <button (click) ="deleteAbout(selected._id)" class="btn btn-danger">Delete</button>
+          <button href="#" class="btn btn-info">Set As Featured</button>
+          <button href="#" class="btn btn-info">Add Image</button>
+        </div>
+      </div>
+</div>

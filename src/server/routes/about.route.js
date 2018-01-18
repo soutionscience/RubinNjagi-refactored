@@ -5,6 +5,9 @@ const controller = require('../controllers/about.controller.js')
 router.route('/')
 .get(controller.get)
 .post(controller.post)
-//.delete(controller.delete)
+.delete(controller.delete)
+
+router.route('/:id')
+.delete(controller.deleteOne)
 
 module.exports = router;

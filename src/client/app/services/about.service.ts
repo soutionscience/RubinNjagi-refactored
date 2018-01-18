@@ -17,4 +17,8 @@ export class AboutService {
     this.restangular.all('about').post(newPost)
   }
 
+  deleteAbout(id: number){
+    this.restangular.one('about', id).remove();
+  }
+
 }

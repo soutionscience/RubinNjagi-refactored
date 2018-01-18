@@ -1,0 +1,41 @@
+<div class="container about">
+    <div class="panel panel-default">
+  <form class="test" [formGroup]="aboutForm" (submit) = "onSubmit()" enctype="multipart/form-data">
+      <div class="form-group">
+        {{aboutForm.value | json}}
+        <label>title</label>
+        <input class="form-control" type="text" formControlName="title" placeholder="title">
+      </div>
+      <div class="form-group">
+          <label>subtitle</label>
+          <input class="form-control" type="text" formControlName="subtitle" placeholder="subtitle">
+        </div>
+        <div class="form-group">
+            <label>Description</label>
+            <input class="form-control" type="text" formControlName="description" placeholder="description">
+          </div>
+          <div class="form-group">
+              <label>Secondtitle</label>
+              <input class="form-control" type="text" formControlName="secondTitle" placeholder="secondTitle">
+            </div>
+            <div class="form-group">
+                <label>SecondSubTitle</label>
+                <input class="form-control" type="text" formControlName="secondSubTitle" placeholder="SecondeSubTitle">
+              </div>
+              <div class="form-group">
+                  <label>SecondDesc</label>
+                  <input class="form-control" type="text" formControlName="secondDesc" placeholder="SecondDesc">
+                </div>
+  
+                <div class="form-group">
+                    <label for="exampleFormControlFile1">Image File upload</label>
+                    <input formControlName = "image" type="file" class="form-control-file">
+                  </div>
+  
+      <button type="submit" class="btn btn-primary">Submit</button>
+      
+          <button mat-dialog-close class="btn btn-warning">Cancel</button>
+        
+    </form>
+    </div>
+  </div>
