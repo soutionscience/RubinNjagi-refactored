@@ -10,7 +10,8 @@ import { MatToolbarModule } from '@angular/material';
 
 const routes: Routes=[
   {path: '', component: HomeComponent, children :[
-    {path: 'about', loadChildren:'./about.module#AboutModule'}
+    {path: 'about', loadChildren:'./about.module#AboutModule'},
+    {path: 'education', loadChildren: './education.module#EducationModule'}
   ]}
 ]
 @NgModule({

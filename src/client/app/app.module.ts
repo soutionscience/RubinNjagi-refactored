@@ -12,10 +12,9 @@ import { AboutService } from './services/about.service';
 import { UploadService } from './services/upload.service';
 import { RouterModule } from '@angular/router/src/router_module';
 
+
 @NgModule({
-  declarations: [
-  
-  ],
+  declarations: [ ],
   imports: [
     BrowserModule,
     MatToolbarModule,

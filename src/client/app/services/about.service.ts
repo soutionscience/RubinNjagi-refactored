@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import {Restangular} from 'ngx-restangular';
 import { Observable } from 'rxjs/Observable';
-import { About } from '../shared/about.model';
+import{About} from '../shared/about.model'
+
 
 @Injectable()
 export class AboutService {

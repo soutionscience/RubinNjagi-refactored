@@ -4,7 +4,7 @@ import { AdminComponent } from '../admin/admin.component';
 
 export const routes :Routes = [{
     path:'',
-    redirectTo: 'admin',
+    redirectTo: 'admin/edu',
     pathMatch: 'full'
 
 },

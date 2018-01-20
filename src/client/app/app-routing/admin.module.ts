@@ -10,7 +10,8 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
 
 const routes: Routes =[
   {path:'', component: AdminAreaComponent, children:[
-    {path:'about', loadChildren:'./admin-about.module#AdminAboutModule'}
+    {path:'about', loadChildren:'./admin-about.module#AdminAboutModule'},
+    {path: 'edu', loadChildren: './admin-education.module#AdminEducationModule'}
   ]}
 ]
 

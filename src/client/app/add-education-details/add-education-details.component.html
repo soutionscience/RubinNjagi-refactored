@@ -1,0 +1,17 @@
+<h4>Add Education</h4>
+<form [formGroup]="educationForm">
+  <div class="form-group">
+    <label for="formGroupExampleInput">School</label>
+    <input type="text" class="form-control" formControlName="school" placeholder="School">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Course</label>
+    <input type="text" class="form-control" formControlName = "course" placeholder="Course">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Description</label>
+    <textarea class="form-control" formControlName ="desc" rows="3"></textarea>
+  </div>
+  <button type ="submit"(click)="onSubmit()" class="btn btn-info">Add Education</button>
+  <button mat-dialog-close class="btn btn-danger">Cancel</button>
+</form>

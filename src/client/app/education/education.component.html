@@ -1,0 +1,17 @@
+<section class="education container">
+<div class="row">
+  <div class="col-md-6">
+    <div *ngFor ="let ed of education">
+      <h2>{{ed.title}}</h2>
+      <h4>{{ed.school}}</h4>
+      <h5>{{ed.course}}</h5>
+      <p>{{ed.desc}}</p>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div *ngFor ="let wr of work">
+      <h2>{{wr.title}}</h2>
+    </div>
+  </div>
+</div>
+</section>
