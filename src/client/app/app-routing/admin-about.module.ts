@@ -7,6 +7,7 @@ import { MatDialogModule } from '@angular/material';
 import { AdminComponent } from '../admin/admin.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AddAboutComponent } from '../add-about/add-about.component';
+import { AddImageComponent } from '../add-image/add-image.component';
 const routes: Routes =[
   {path:'', component: AdminAboutComponent}
 ]
@@ -20,7 +21,7 @@ const routes: Routes =[
     FormsModule
   
   ],
-  declarations: [AdminAboutComponent, AdminAboutDetailComponent, AdminComponent, AddAboutComponent],
+  declarations: [AdminAboutComponent, AdminAboutDetailComponent, AdminComponent, AddAboutComponent, AddImageComponent],
   entryComponents:[AddAboutComponent]
 })
 export class AdminAboutModule { }

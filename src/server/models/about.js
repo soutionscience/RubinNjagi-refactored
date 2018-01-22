@@ -10,6 +10,10 @@ var image = new Schema({
 var about = new Schema({
     images: [image],
     title: String,
+    featured: {
+    type: Boolean,
+    default: false
+},
     subtitle: String,
     description: String,
     secondTitle: String,

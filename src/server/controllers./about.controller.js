@@ -32,3 +32,16 @@ exports.deleteOne= (function(req,res,next){
     })
 
 })
+
+exports.setFeatured =(function(req, res, next){
+    About.findById(req.params.id, function(err, resp){
+        if(err) throw err;
+        console.log("in responce we have",  resp)
+      //resp.featured ='';
+       resp.featured = !resp.featured;
+       resp.save(function(err, about){
+           if(err) throw err;
+           res.json(about)
+       })
+    })
+})

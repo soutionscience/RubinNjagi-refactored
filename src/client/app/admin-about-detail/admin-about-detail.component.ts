@@ -10,7 +10,7 @@ import { AboutService } from '../services/about.service';
 })
 export class AdminAboutDetailComponent implements OnInit {
 
-  @Input()selected:About
+  @Input()selected:About[]
 
   constructor(private aboutService: AboutService) { }
 
@@ -19,5 +19,9 @@ export class AdminAboutDetailComponent implements OnInit {
   deleteAbout(id){
   
     this.aboutService.deleteAbout(id);
+  }
+  setFeatured(id){
+  console.log("hitting featured")
+  this.aboutService.setFeaured(id).subscribe(resp => this.selected = resp)
   }
 }

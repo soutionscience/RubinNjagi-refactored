@@ -21,8 +21,9 @@ app.use(cors());
 
 mongoose.connect(process.env.MONGOLAB_URI || config.localDb, function(err, db){
 	if(!err){
-		console.log('connected to local mongo')
-		database= db;
+          if(config.localDb){ console.log('connected to local mongo')}
+          else{console.log("connected to remote db")}
+          database= db;
 	}
 	else{
 		console.log('failed to connect to mongo')

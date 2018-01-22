@@ -9,5 +9,6 @@ router.route('/')
 
 router.route('/:id')
 .delete(controller.deleteOne)
+.put(controller.setFeatured)
 
 module.exports = router;

@@ -21,5 +21,8 @@ export class AboutService {
   deleteAbout(id: number){
     this.restangular.one('about', id).remove();
   }
+  setFeaured(id: number):Observable<About[]>{
+    return this.restangular.one('about', id).put();
+  }
 
 }

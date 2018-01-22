@@ -3,11 +3,17 @@
     <div class="card" style="width: 36rem;">
         <div class="card-body">
           <h5 class="card-title">{{selected.title}}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <h6 class="card-subtitle mb-2 text-muted">{{selected.subtitle}}</h6>
+          <p class="card-text">{{selected.description}}</p>
           <button (click) ="deleteAbout(selected._id)" class="btn btn-danger">Delete</button>
-          <button href="#" class="btn btn-info">Set As Featured</button>
-          <button href="#" class="btn btn-info">Add Image</button>
+          <button (click) ="setFeatured(selected._id)" class="btn" [ngClass]="selected.featured ? 'btn-info': 'btn-success'">Set As Featured</button>
+          <button class="btn btn-info">Add Image</button>
         </div>
+        <div class="add-image">
+          <app-add-image></app-add-image>
+        </div>
+
+
       </div>
+     
 </div>
