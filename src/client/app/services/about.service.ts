@@ -24,5 +24,9 @@ export class AboutService {
   setFeaured(id: number):Observable<About[]>{
     return this.restangular.one('about', id).put();
   }
+  getFeatured(): Observable<About[]>{
+    return this.restangular.all('about').getList({featured: true})
+
+  }
 
 }

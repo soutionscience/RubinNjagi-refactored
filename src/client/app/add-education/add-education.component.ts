@@ -8,6 +8,7 @@ import { AddEducationDetailsComponent } from '../add-education-details/add-educa
   selector: 'app-add-education',
   templateUrl: './add-education.component.html',
   styleUrls: ['./add-education.component.css']
+  
 })
 export class AddEducationComponent implements OnInit {
   education: Education[]

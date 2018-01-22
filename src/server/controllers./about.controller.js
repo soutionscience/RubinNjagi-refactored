@@ -9,11 +9,20 @@ exports.post = ( function(req, res, next){
 });
 
 exports.get= (function(req, res){
-    About.find({})
+   if(req.query.featured){
+    About.find({featured: true})
     .exec(function(err, resp){
         if(err) throw err;
        res.json(resp);
-    })
+    })}
+    else{
+        About.find({})
+        .exec(function(err, resp){
+            if(err) throw err;
+           res.json(resp);
+        })
+
+    }
 });
 
 exports.delete = (function(req, res){
@@ -44,4 +53,10 @@ exports.setFeatured =(function(req, res, next){
            res.json(about)
        })
     })
+});
+
+exports.getOne =(function(req, res, next){
+    console.log("is it hitting this??")
+    res.send();
+
 })

@@ -1,9 +1,10 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, Output, EventEmitter} from '@angular/core';
 import { EducationService } from '../services/education.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { AddEducationComponent } from '../add-education/add-education.component';
 import { FormBuilder } from '@angular/forms';
 import { FormGroup } from '@angular/forms';
+;
 
 @Component({
   selector: 'app-add-education-details',
@@ -11,6 +12,9 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./add-education-details.component.css']
 })
 export class AddEducationDetailsComponent implements OnInit {
+
+  @Output() notify = new EventEmitter<any>(); //notifies parent of changes in child component
+
 
   educationForm: FormGroup
 

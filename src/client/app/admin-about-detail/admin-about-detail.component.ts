@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 import { Input } from '@angular/core';
 import { About } from '../shared/about.model';
 import { AboutService } from '../services/about.service';
@@ -11,6 +11,7 @@ import { AboutService } from '../services/about.service';
 export class AdminAboutDetailComponent implements OnInit {
 
   @Input()selected:About[]
+  @Output() notify = new EventEmitter<any>(); //notify parent component to changes in child component 
 
   constructor(private aboutService: AboutService) { }
 
@@ -23,5 +24,6 @@ export class AdminAboutDetailComponent implements OnInit {
   setFeatured(id){
   console.log("hitting featured")
   this.aboutService.setFeaured(id).subscribe(resp => this.selected = resp)
+  this.notify.emit();
   }
 }

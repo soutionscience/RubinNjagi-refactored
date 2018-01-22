@@ -26,7 +26,7 @@ export class AboutComponent implements OnInit {
     this.getAbout()
   }
   getAbout(){
-    this.aboutService.getAbout().subscribe(story => { console.log("what is in " + story) ;this.abouts = story})
+    this.aboutService.getFeatured().subscribe(story => { console.log("what is in " + story) ;this.abouts = story})
   }
   on
 }

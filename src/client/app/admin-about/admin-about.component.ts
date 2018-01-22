@@ -25,11 +25,14 @@ export class AdminAboutComponent implements OnInit {
   }
   onSelect(about){
     this.selectedOne = about
-   console.log("selecting ", about)
+  
   }
   addAbout(){
-    console.log("adding about")
+ 
     this.dialog.open(AddAboutComponent, {width: '700px' , height: '450px' })
   }
-
+  onNotify(){
+ 
+    this.getAbout();
+  }
 }

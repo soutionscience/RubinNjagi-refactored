@@ -10,5 +10,8 @@ router.route('/')
 router.route('/:id')
 .delete(controller.deleteOne)
 .put(controller.setFeatured)
+.get(controller.getOne)
+
+
 
 module.exports = router;

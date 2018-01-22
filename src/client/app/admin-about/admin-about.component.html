@@ -9,7 +9,7 @@
     </div>
   <!-- <div><h1>Tester</h1></div> -->
     <div class="details">
-    <app-admin-about-detail [selected] ="selectedOne"></app-admin-about-detail>
+    <app-admin-about-detail (notify)='onNotify($event)' [selected] ="selectedOne"></app-admin-about-detail>
   </div>
 
   </div>
