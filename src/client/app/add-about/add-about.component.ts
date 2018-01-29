@@ -9,6 +9,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
   styleUrls: ['./add-about.component.css']
 })
 export class AddAboutComponent implements OnInit {
+  myRoute: String
   aboutForm: FormGroup;
   constructor( private aboutService: AboutService,  
     public dialogRef: MatDialogRef<AddAboutComponent>,
@@ -36,8 +37,8 @@ export class AddAboutComponent implements OnInit {
 
   
   onSubmit(){
-
-    this.aboutService.postAbout(this.aboutForm.value)
+    this.myRoute ='about'
+    this.aboutService.postAbout(this.aboutForm.value, this.myRoute)
     console.log("submiting form")
     this.dialogRef.close()
     

@@ -1,16 +1,34 @@
 
 <div *ngIf="selected">
-    <div class="card" style="width: 36rem;">
+    <div class="card" style="width: 46rem;">
         <div class="card-body">
+          <div class="row">
+            <div class="story">
           <h5 class="card-title">{{selected.title}}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">{{selected.subtitle}}</h6>
-          <p class="card-text">{{selected.description}}</p>
-          <button (click) ="deleteAbout(selected._id)" class="btn btn-danger">Delete</button>
-          <button (click) ="setFeatured(selected._id)" class="btn" [ngClass]="selected.featured ? 'btn-info': 'btn-success'">Set As Featured</button>
-          <button class="btn btn-info">Add Image</button>
+          <!-- <h6 class="card-subtitle mb-2 text-muted">{{selected.subtitle}}</h6> -->
+          <p class="card-text">{{selected.desc}}</p>
+          <img [src]= "selected.images[0]?.location" width="145px" height="auto"><br>
+          <button (click) ="deleteAbout(selected._id, route)" class="btn btn-danger">Delete</button>
+          <button (click) ="setFeatured(selected._id, route)" class="btn" [ngClass]="selected.featured ? 'btn-info': 'btn-success'">Featured</button>
+          
+        </div>
+        <div class="images">
+          <div *ngIf= "image">
+          <button class="btn btn-info" (click) ="addImage(selected._id, image.filename, route)" >Add Image</button>
+        </div>
+        </div>
+        </div>
+        </div>
+        <div *ngIf="image">
+          
+        <!-- image preview -->
+              <p>{{image.originalname}}</p>
+              <img [src]="'/uploads/' + image.filename"width="145px" height="auto">
+          <!-- </div> -->
+          
         </div>
         <div class="add-image">
-          <app-add-image></app-add-image>
+          <app-add-image (myNotify)='imageNotify($event)' ></app-add-image>
         </div>
 
 

@@ -1,9 +1,10 @@
 <section class="about container">
-  <h1>About me</h1>
+  
   <div *ngFor ="let about of abouts">
   <div class="row">
     <div class="col-md-6">
-      <h2>{{about.title}}</h2>
+   <img [src]="about.images[0].location" height="50px">
+    <h2>{{about.title}}</h2>
       <h3>{{about.subtitle}}</h3>
       <p>{{about.description}}</p>
     </div>

@@ -17,11 +17,33 @@ var education = require('./routes/education.routes')
 var app = express();
 app.use(cors());
 
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
+
+// uncomment after placing your favicon in /public
+//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+// show directory to save 
 
 
-mongoose.connect(process.env.MONGOLAB_URI || config.localDb, function(err, db){
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
+app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
+
+
+
+ app.use('/api/about', about);
+ app.use('/api/uploads', upload);
+ app.use('/api/work', work);
+ app.use('/api/education', education)
+ //app.get('*', function(req, res){ return res.sendFile(path.join(__dirname, 'public/index.html'))})
+
+ mongoose.connect(process.env.MONGOLAB_URI || config.localDb, function(err, db){
 	if(!err){
-          if(config.localDb){ console.log('connected to local mongo')}
+          if(config.localDb){ console.log('connected to local mongo db')}
           else{console.log("connected to remote db")}
           database= db;
 	}
@@ -30,28 +52,6 @@ mongoose.connect(process.env.MONGOLAB_URI || config.localDb, function(err, db){
 		throw err
 	}
 })
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
-
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-// show directory to save 
-app.use(express.static(path.join(__dirname, 'public')));
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
-
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
-
- app.use('/api/about', about);
- app.use('/api/uploads', upload);
- app.use('/api/work', work);
- app.use('/api/education', education)
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

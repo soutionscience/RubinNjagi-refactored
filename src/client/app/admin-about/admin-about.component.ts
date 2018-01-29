@@ -13,6 +13,7 @@ export class AdminAboutComponent implements OnInit {
 
   abouts: About[];
   selectedOne: About;
+  ApiRoute: String;
 
   constructor(private aboutService: AboutService, private dialog: MatDialog) { }
 
@@ -25,13 +26,14 @@ export class AdminAboutComponent implements OnInit {
   }
   onSelect(about){
     this.selectedOne = about
+    this.ApiRoute ="about"
   
   }
   addAbout(){
  
     this.dialog.open(AddAboutComponent, {width: '700px' , height: '450px' })
   }
-  onNotify(){
+  onNotify(test){
  
     this.getAbout();
   }

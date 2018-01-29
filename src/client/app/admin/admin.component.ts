@@ -9,6 +9,7 @@ import { AboutService } from '../services/about.service';
 })
 export class AdminComponent implements OnInit {
     aboutForm: FormGroup;
+    myRoute: String
   constructor(private fb: FormBuilder, private aboutService: AboutService) { this.createForm()}
 
   createForm(){
@@ -29,8 +30,8 @@ export class AdminComponent implements OnInit {
   }
 
   onSubmit(){
-
-    this.aboutService.postAbout(this.aboutForm.value)
+    this.myRoute ='about'
+    this.aboutService.postAbout(this.aboutForm.value, this.myRoute)
     console.log("submiting form")
     
   }

@@ -1,15 +1,14 @@
 <div class="container">
   <div class="item-display">
     <h3>All Abouts</h3>
-    
-    <div>
+  <div>
       <section *ngFor= "let about of abouts">
-      <button (click) = "onSelect(about)" class="btn btn-primary">{{about.title}}</button>
+        <button (click) = "onSelect(about)" class="btn btn-primary">{{about.title}}</button>
     </section>
     </div>
   <!-- <div><h1>Tester</h1></div> -->
     <div class="details">
-    <app-admin-about-detail (notify)='onNotify($event)' [selected] ="selectedOne"></app-admin-about-detail>
+    <app-admin-about-detail (notify)='onNotify($event)' [selected] ="selectedOne" [route]="ApiRoute"></app-admin-about-detail>
   </div>
 
   </div>

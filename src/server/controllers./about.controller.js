@@ -55,8 +55,30 @@ exports.setFeatured =(function(req, res, next){
     })
 });
 
-exports.getOne =(function(req, res, next){
-    console.log("is it hitting this??")
-    res.send();
+exports.getOne =( function(req, res,next){
+    About.findById(req.params.id, function(err, resp){
+        res.json(resp)
+    })
+})
 
+exports.postImages =(function(req, res, next){
+  About.findById(req.params.id, function(err, resp){
+      if (err)throw err;
+   for(var i = (resp.images.length-1); i>=0; i--){
+       resp.images.id(resp.images[i]._id).remove();
+
+   }
+  resp.images.push(req.body)
+  resp.save(function(err, result){
+      if(err) throw err;
+      res.status(201).send({status: "images added"});
+  })
+  })
+
+})
+
+exports.getImages =(function(req,res, next){
+    About.findById(req.params.id, function(err, resp){
+         res.json(resp.images);
+    })
 })

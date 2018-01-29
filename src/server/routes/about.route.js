@@ -8,9 +8,14 @@ router.route('/')
 .delete(controller.delete)
 
 router.route('/:id')
+.get(controller.getOne)
 .delete(controller.deleteOne)
 .put(controller.setFeatured)
-.get(controller.getOne)
+
+router.route('/:id/images')
+.post(controller.postImages)
+.get(controller.getImages)
+
 
 
 

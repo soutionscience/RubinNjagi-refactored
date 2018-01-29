@@ -1,5 +1,7 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Input, Output, EventEmitter } from '@angular/core';
 import { UploadService } from '../services/upload.service';
+import { About } from '../shared/about.model';
+import {AboutService} from '../services/about.service'
 
 @Component({
   selector: 'app-add-image',
@@ -7,8 +9,10 @@ import { UploadService } from '../services/upload.service';
   styleUrls: ['./add-image.component.css']
 })
 export class AddImageComponent implements OnInit {
+    @Input() selected :About[];
+    @Output() myNotify = new EventEmitter<any>();
 
-  constructor(private uploadService: UploadService) { }
+  constructor (private uploadService: UploadService, private aboutService:AboutService) { }
 
   ngOnInit() {
   }
@@ -22,9 +26,14 @@ addFile(): void {
         this.uploadService
             .upload(fileToUpload)
             .subscribe(res => {
-                console.log(res);
+                this.myNotify.emit(res)
+                console.log("is this the res" , res);
             });
     }
 }
+
+// testCall(){
+//     this.aboutService.getImage(this.test).subscribe(resp =>{console.log("geting images back", resp)})
+// }
 
 }

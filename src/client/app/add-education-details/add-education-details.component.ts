@@ -4,7 +4,6 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { AddEducationComponent } from '../add-education/add-education.component';
 import { FormBuilder } from '@angular/forms';
 import { FormGroup } from '@angular/forms';
-;
 
 @Component({
   selector: 'app-add-education-details',

@@ -1,7 +1,22 @@
 <div class="container">
+  <section class="education">
 <h1>All education </h1>
 <button (click)="addEducation()" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Add Education</button>
-<div *ngFor ="let ed of education">
-  <button class="btn btn-primary">{{ed.school}}</button>
+<div class="item-details">
+<div>
+  <section *ngFor="let ed of education">
+  <button (click)="setSelected(ed)" class="btn btn-primary">{{ed.school}}</button>
+</section>
+</div>
+<div>
+<app-admin-about-detail (notify)='onNotify($event)' [selected] ="selectedOne" [route]="ApiRoute"></app-admin-about-detail>
+
+
 </div>
 </div>
+  </section>
+<section class="work">
+    <app-admin-work></app-admin-work>
+</section>
+</div>
+

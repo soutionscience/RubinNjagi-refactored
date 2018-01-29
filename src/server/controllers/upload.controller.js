@@ -3,7 +3,7 @@ var About = require('../models/about')
 
 var storage = multer.diskStorage({ //multers disk storage settings
     destination: function (req, file, cb) {
-        cb(null, './uploads/');
+        cb(null, './src/server/uploads');
     },
     filename: function (req, file, cb) {
         var datetimestamp = Date.now();
@@ -18,15 +18,15 @@ var storage = multer.diskStorage({ //multers disk storage settings
 
 
 exports.post = ( upload, function(req, res){
-    upload(req,res,function(err){
+    upload(req,res, function(err, resp){
         console.log(req.file);
         if(err){
             console.log("there is an error")
              res.json({error_code:1,err_desc:err});
              return;
         }
-        console.log("working but not really")
-         res.json({error_code:0,err_desc:null});
+        console.log("no problem")
+         res.json(req.file);
     });
 })
 
