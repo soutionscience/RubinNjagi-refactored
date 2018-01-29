@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { AdminWorkDailogComponent } from '../admin-work-dailog/admin-work-dailog.component';
+import { Work } from '../shared/work.model';
+import { WorkService } from '../services/work.service';
 
 @Component({
   selector: 'app-admin-work',
@@ -9,7 +11,13 @@ import { AdminWorkDailogComponent } from '../admin-work-dailog/admin-work-dailog
 })
 export class AdminWorkComponent implements OnInit {
 
-  constructor(private dialog: MatDialog) { }
+  work: Work[];
+  selectedOne: Work
+  ApiRoute: String
+
+  constructor(private dialog: MatDialog, private workService: WorkService ) {
+    this.getWork();
+   }
 
   ngOnInit() {
   }
@@ -22,6 +30,15 @@ export class AdminWorkComponent implements OnInit {
       dataKey:"mine"
     }})
 
+  }
+  getWork(){
+    this.workService.getWork()
+    .subscribe(wrk => this.work = wrk)
+  }
+  setSelected(wrk){
+    console.log("selecting work", wrk)
+    this.selectedOne = wrk;
+    this.ApiRoute ="work"
   }
 
 }

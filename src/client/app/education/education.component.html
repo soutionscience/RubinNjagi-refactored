@@ -11,7 +11,10 @@
   </div>
   <div class="col-md-6">
     <div *ngFor ="let wr of work">
-      <h2>{{wr.title}}</h2>
+        <img [src]="wr.images[0]?.location" height="50px">
+      <h3>{{wr.company}}</h3>
+      <h4>{{wr.position}}</h4>
+      <p>{{wr.desc}}</p>
     </div>
   </div>
 </div>
