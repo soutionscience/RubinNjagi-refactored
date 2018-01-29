@@ -6,6 +6,8 @@ import { BannerComponent } from '../banner/banner.component';
 import { MyMenuComponent } from '../my-menu/my-menu.component';
 import { TopMenuComponent } from '../top-menu/top-menu.component';
 import { MatToolbarModule } from '@angular/material';
+import { ContactsComponent } from '../contacts/contacts.component';
+import { FooterComponent } from '../footer/footer.component';
 
 
 const routes: Routes=[
@@ -21,6 +23,6 @@ const routes: Routes=[
     MatToolbarModule
   
   ],
-  declarations: [HomeComponent, BannerComponent,MyMenuComponent, TopMenuComponent]
+  declarations: [HomeComponent, BannerComponent,MyMenuComponent, TopMenuComponent, ContactsComponent, FooterComponent]
 })
 export class WebsiteModule { }

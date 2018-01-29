@@ -1,5 +1,5 @@
 <section class="about container">
-  
+  <div *ngIf ="!abouts"class="loader"></div>
   <div *ngFor ="let about of abouts">
   <div class="row">
     <div class="col-md-6">
@@ -22,4 +22,3 @@
 
 
 </section>
-<p>test</p>
