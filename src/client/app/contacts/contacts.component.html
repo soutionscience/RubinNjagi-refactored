@@ -1,26 +1,35 @@
 <div class="contacts">
   <div class="container"> 
     <p>Talk to me:</p>
-    <form>
+    <form [formGroup]="contactForm" novalidate>
         <div class="row">
           <div class="col">
             <label>First name</label>
-            <input type="text" class="form-control" placeholder="First name">
+        <input 
+        [ngClass]="(contactForm.get('firstname').hasError('required') && contactForm.get('firstname').touched) ? 'error' : 'primary'"
+        type="text" class="form-control" placeholder="First name" formControlName="firstname">
           </div>
           <div class="col">
             <label>Last name</label>
-            <input type="text" class="form-control" placeholder="Last name">
+            <input 
+            [ngClass]="(contactForm.get('secondname').hasError('required') && contactForm.get('secondname').touched) ? 'error' : 'primary'"
+            type="text" class="form-control" placeholder="Last name" formControlName ="secondname">
           </div>
         </div>
         <div>
           <label>Email</label>
-         <input type="text" class="form-control" placeholder="sample@sample.com">
+         <input 
+         [ngClass]="(contactForm.get('email').hasError('required') && contactForm.get('email').touched) ? 'error' : 'primary'"
+         type="text" class="form-control"placeholder="sample@sample.com" formControlName="email">
+         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
         <div>
             <label>Message</label>
-           <textarea type="text" class="form-control" placeholder="message" rows="3"></textarea>
+           <textarea 
+           [ngClass]="(contactForm.get('message').hasError('required') && contactForm.get('message').touched) ? 'error' : 'primary'"
+           type="text" class="form-control" placeholder="message" rows="3" formControlName="message"></textarea>
           </div>
-          <button class="btn btn-light">Submit</button>
+          <button [disabled]= "contactForm.invalid"(click)="onSubmit()" class="btn btn-light">Submit</button>
       </form>
     </div> 
 </div>

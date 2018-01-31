@@ -5,3 +5,6 @@
 button{
     margin-top: 4px;
 }
+.error{
+    border: red solid 2px;
+}

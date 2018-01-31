@@ -22,7 +22,8 @@ export class AdminAboutComponent implements OnInit {
   }
 
   getAbout(){
-    this.aboutService.getAbout().subscribe(resp=> this.abouts = resp)
+    this.ApiRoute ='about'
+    this.aboutService.getAbout(this.ApiRoute).subscribe(resp=> this.abouts = resp)
   }
   onSelect(about){
     this.selectedOne = about

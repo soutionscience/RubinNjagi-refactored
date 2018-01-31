@@ -8,6 +8,8 @@ import { TopMenuComponent } from '../top-menu/top-menu.component';
 import { MatToolbarModule } from '@angular/material';
 import { ContactsComponent } from '../contacts/contacts.component';
 import { FooterComponent } from '../footer/footer.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 
 const routes: Routes=[
@@ -20,7 +22,10 @@ const routes: Routes=[
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    MatToolbarModule
+    MatToolbarModule,
+    FormsModule,
+    ReactiveFormsModule,
+    AngularFontAwesomeModule
   
   ],
   declarations: [HomeComponent, BannerComponent,MyMenuComponent, TopMenuComponent, ContactsComponent, FooterComponent]

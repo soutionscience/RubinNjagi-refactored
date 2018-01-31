@@ -13,9 +13,13 @@ import { AdminAboutModule } from './admin-about.module';
 
 
 const routes: Routes =[
-  {path:'', component: AdminAreaComponent, children:[
+  {path:'', component: AdminAreaComponent, 
+  // redirectTo: 'control-panel',
+  // pathMatch: 'full', 
+  children:[
     {path:'about', loadChildren:'./admin-about.module#AdminAboutModule'},
-    {path: 'edu', loadChildren: './admin-education.module#AdminEducationModule'}
+    {path: 'edu', loadChildren: './admin-education.module#AdminEducationModule'},
+    {path:'control-panel', loadChildren:'./admin-control.module#AdminControlModule'}
   ]}
 ]
 

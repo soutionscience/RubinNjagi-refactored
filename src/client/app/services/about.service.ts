@@ -3,6 +3,7 @@ import {Restangular} from 'ngx-restangular';
 import { Observable } from 'rxjs/Observable';
 import{About} from '../shared/about.model'
 import { Image } from '../shared/image.model';
+import { Contact } from '../shared/contact.model';
 
 
 @Injectable()
@@ -10,10 +11,17 @@ export class AboutService {
 
   constructor(private restangular: Restangular) { }
 
-  getAbout(): Observable<About[]>{
+  getAbout(apiRoute): Observable<About[]>{
     console.log("hitting about service")
-    return this.restangular.all('about').getList();
+    return this.restangular.all(apiRoute).getList();
   }
+  
+  getMessages(apiRoute): Observable<Contact[]>{
+    console.log("hitting about service")
+    return this.restangular.all(apiRoute).getList();
+  }
+
+
 
   postAbout(newPost, apiRoute){
     this.restangular.all(apiRoute).post(newPost)

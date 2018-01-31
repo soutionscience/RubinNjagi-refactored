@@ -12,6 +12,7 @@ var config= require('./config')
  var upload = require('./routes/uploads.route')
  var work = require('./routes/work.route');
 var education = require('./routes/education.routes')
+var contact = require('./routes/contact.route')
 
 
 var app = express();
@@ -38,7 +39,8 @@ app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
  app.use('/api/about', about);
  app.use('/api/uploads', upload);
  app.use('/api/work', work);
- app.use('/api/education', education)
+ app.use('/api/education', education);
+ app.use('/api/contact', contact);
  //app.get('*', function(req, res){ return res.sendFile(path.join(__dirname, 'public/index.html'))})
 
  mongoose.connect(process.env.MONGOLAB_URI || config.localDb, function(err, db){

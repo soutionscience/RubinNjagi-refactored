@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="item-display">
+    <h1>Messages</h1>
+   <div class="messages">
+     
+      <div class="panel-group">
+          <div *ngFor="let m of messages" class="panel panel-info">
+            <div class="panel-heading">{{m.firstname}} {{m.secondname}}</div>
+            <div class="panel-body">{{m.message}}</div>
+            <div class="panel-footer">{{m.email}}  <button class="btn btn-danger">Delete</button> </div>
+          </div>
+         
+        </div>
+   </div>
+   <div class="visitors">
+     test
+   </div>
+  </div>
+</div>

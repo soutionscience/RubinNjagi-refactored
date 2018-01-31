@@ -11,6 +11,7 @@ import { AboutService } from '../services/about.service';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit {
+  apiRoute: String;
   abouts: About[];
 
 
@@ -26,6 +27,7 @@ export class AboutComponent implements OnInit {
     this.getAbout()
   }
   getAbout(){
+    this.apiRoute ='about'
     this.aboutService.getFeatured().subscribe(story => { console.log("what is in " + story) ;this.abouts = story})
   }
   on
