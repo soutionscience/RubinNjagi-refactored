@@ -10,6 +10,7 @@ import { ContactsComponent } from '../contacts/contacts.component';
 import { FooterComponent } from '../footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 const routes: Routes=[

@@ -41,9 +41,9 @@ app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
  app.use('/api/work', work);
  app.use('/api/education', education);
  app.use('/api/contact', contact);
- //app.get('*', function(req, res){ return res.sendFile(path.join(__dirname, 'public/index.html'))})
+ app.get('*', function(req, res){ return res.sendFile(path.join(__dirname, 'public/index.html'))})
 
- mongoose.connect(process.env.MONGOLAB_URI || config.localDb, function(err, db){
+ mongoose.connect(process.env.MONGOLAB_URI || config.mongoDbUrl, function(err, db){
 	if(!err){
           if(config.localDb){ console.log('connected to local mongo db')}
           else{console.log("connected to remote db")}
